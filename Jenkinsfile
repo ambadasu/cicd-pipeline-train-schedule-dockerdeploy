@@ -1,6 +1,7 @@
 pipeline {
   agent any 
   stages {
+    
      stage ('Build') {
      steps {
             echo 'Running Build Automation'
@@ -22,7 +23,7 @@ pipeline {
                      }
                   }
         }
-
+    }
     
 
     stage ('Push Docker Image') {
@@ -38,7 +39,6 @@ pipeline {
                          }
               }
         }
-
 
    }
 }
