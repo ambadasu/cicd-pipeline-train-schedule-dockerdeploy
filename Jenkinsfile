@@ -18,7 +18,7 @@ pipeline {
             script {
               app = docker.build('ambadasu/train-schedule') 
               app.inside {
-                  sh 'echo $(curl localhost:8080')
+                  sh 'echo $(curl localhost:8080)'
                      }
                   }
         }
@@ -33,7 +33,7 @@ pipeline {
         steps {
                script {
                          docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-creds')
-                         app.push("${env.BUILDNUMBER}}")
+                         app.push("${env.BUILDNUMBER}")
                          app.push("latest")
                          }
               }
